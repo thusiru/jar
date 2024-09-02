@@ -6,6 +6,8 @@ def main():
         size = int(input("Size for the jar? "))
     except ValueError:
         sys.exit("Value can't be a string")
+    if size < 0:
+        sys.exit("Size can't be negetive")
     print(jar(size))
 
 
