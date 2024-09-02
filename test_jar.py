@@ -4,30 +4,19 @@ from jar import jar
 
 
 def test_string():
-    with pytest.raises(SystemExit):
-        jar("cat")
-    with pytest.raises(SystemExit):
-        jar("dog")
-    with pytest.raises(SystemExit):
-        jar("ooo")
+    assert jar("cat") == "Size cannot be a string"
 
 
 def test_negative():
-    with pytest.raises(SystemExit):
-        jar("-1")
-    with pytest.raises(SystemExit):
-        jar("-999")
-    with pytest.raises(SystemExit):
-        jar("-5")
+    assert jar("-1") == "Size cannot be negative"
+    assert jar("-999") == "Size cannot be negative"
+    assert jar("-5") == "Size cannot be negative"
 
 
 def test_symbol():
-    with pytest.raises(SystemExit):
-        jar(".")
-    with pytest.raises(SystemExit):
-        jar("-")
-    with pytest.raises(SystemExit):
-        jar("'")
+    assert jar(".") == "Size cannot be a string"
+    assert jar("'") == "Size cannot be a string"
+    assert jar("$") == "Size cannot be a string"
 
 
 def test_positive():
