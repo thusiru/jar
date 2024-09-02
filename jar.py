@@ -1,5 +1,11 @@
+import sys
+
+
 def main():
-    size = int(input("Size for the jar? "))
+    try:
+        size = int(input("Size for the jar? "))
+    except ValueError:
+        sys.exit("Value can't be a string")
     print(jar(size))
 
 
